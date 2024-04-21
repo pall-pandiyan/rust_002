@@ -1,10 +1,13 @@
-use chrono::{Timelike, Utc};
+use chrono::{Datelike, Timelike, Utc};
 
-fn print_time() {
+fn print_datetime() {
     let now = Utc::now();
     let (is_pm, hour) = now.hour12();
     println!(
-        "Time now: {:2}:{:2}:{:2} {}",
+        "Datetime now: {}/{}/{} {:2}:{:2}:{:2} {}",
+        now.day(),
+        now.month(),
+        now.year(),
         hour,
         now.minute(),
         now.second(),
@@ -13,5 +16,5 @@ fn print_time() {
 }
 
 fn main() {
-    print_time();
+    print_datetime();
 }
